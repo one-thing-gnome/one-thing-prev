@@ -1,0 +1,11 @@
+{
+  "description": "Display one thing on top bar",
+  "name": "One Thing",
+  "settings-schema": "org.gnome.shell.extensions.one-thing",
+  "shell-version": [
+    "42"
+  ],
+  "url": "",
+  "uuid": "one-thing@organistation.mail.com",
+  "version": 1
+}
