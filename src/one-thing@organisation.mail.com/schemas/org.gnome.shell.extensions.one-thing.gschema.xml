@@ -1,0 +1,12 @@
+
+<schemalist>
+<schema id="org.gnome.shell.extensions.one-thing" path="/org/gnome/shell/extensions/one-thing/">
+
+<key name="text" type="s">
+<default>'One Thing'</default>
+<summary>Summary</summary>
+<description>Description</description>
+</key>
+
+</schema>
+</schemalist>
