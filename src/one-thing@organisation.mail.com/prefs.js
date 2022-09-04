@@ -39,7 +39,7 @@ class PrefsWidget {
     addTextUrl() {
         let hbox = new Gtk.Box({ orientation: Gtk.Orientation.HORIZONTAL, margin_top: 5 });
         this.entry = new Gtk.Entry({ hexpand: true, margin_start: 20 });
-        this.entry.set_placeholder_text("type your 'One Thing' here.")
+        this.entry.set_placeholder_text("Type your 'One Thing' here …")
 
         this.entry.set_text(this._settings.get_string('text'));
         this.entry.connect('changed', (entry) => {

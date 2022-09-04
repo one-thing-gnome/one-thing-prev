@@ -1,11 +1,11 @@
 {
-  "description": "Display one thing on top bar",
+  "description": "Put one task in your GNOME status bar.",
   "name": "One Thing",
   "settings-schema": "org.gnome.shell.extensions.one-thing",
   "shell-version": [
     "42"
   ],
   "url": "",
-  "uuid": "one-thing@organistation.mail.com",
+  "uuid": "one-thing@organisation.mail.com",
   "version": 1
 }

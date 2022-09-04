@@ -8,7 +8,7 @@ const ExtensionUtils = imports.misc.extensionUtils;
 let OneThing = GObject.registerClass(
     class OneThing extends PanelMenu.Button {
         _init() {
-            super._init(0.0, 'One Note');
+            super._init(0.0, 'One Thing');
             this._label = new St.Label({ text: "", y_align:Clutter.ActorAlign.CENTER });
             this.add_actor(this._label);
         }

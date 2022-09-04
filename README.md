@@ -1,5 +1,7 @@
-# one-thing
-to focus on a single task, this tool provides a way to show the task on gnome's top bar on the right side.
+# 1️⃣ One Thing
+**Put one task in your GNOME status bar.**
+
+Inspired by ["One Thing" for macOS](https://sindresorhus.com/one-thing).
 
 ## Command Line
 
