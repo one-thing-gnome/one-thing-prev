@@ -5,6 +5,7 @@ const GdkPixbuf = imports.gi.GdkPixbuf;
 const Gdk = imports.gi.Gdk;
 
 const ExtensionUtils = imports.misc.extensionUtils;
+Me = ExtensionUtils.getCurrentExtension();
 
 function init() {
 }
@@ -33,6 +34,7 @@ class PrefsWidget {
         });
         this.vbox.set_size_request(60, 60);
         this.vbox.append(this.addTextUrl());
+        this.vbox.append(this.addPicture());
         this.widget.append(this.vbox);
     }
 
@@ -45,9 +47,18 @@ class PrefsWidget {
         this.entry.connect('changed', (entry) => {
             this._settings.set_string('text', entry.get_text());
         });
+        this.entry.connect('activate', (entry) => {
+            this._settings.set_string('text', entry.get_text());
+        });
 
         hbox.append(this.entry);
 
         return hbox;
+    }
+
+    addPicture() {
+        let picture = Gtk.Picture.new_for_filename(Me.dir.get_path() + "/assets/one-thing-gnome.svg");
+        picture.set_size_request(10, 10);
+        return picture;
     }
 }
