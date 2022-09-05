@@ -35,6 +35,7 @@ class PrefsWidget {
         this.vbox.set_size_request(60, 60);
         this.vbox.append(this.addTextUrl());
         this.vbox.append(this.addPicture());
+        this.vbox.append(this.addAuthors());
         this.widget.append(this.vbox);
     }
 
@@ -42,6 +43,7 @@ class PrefsWidget {
         let hbox = new Gtk.Box({ orientation: Gtk.Orientation.HORIZONTAL, margin_top: 5 });
         this.entry = new Gtk.Entry({ hexpand: true, margin_start: 20 });
         this.entry.set_placeholder_text("Type your 'One Thing' here …")
+        this.entry.set_alignment(0.5);
 
         this.entry.set_text(this._settings.get_string('text'));
         this.entry.connect('changed', (entry) => {
@@ -61,4 +63,16 @@ class PrefsWidget {
         picture.set_size_request(10, 10);
         return picture;
     }
+
+    addAuthors() {
+        const label =new Gtk.Label({
+	    use_markup: true,
+	    label: '<span size="small">'
+		+ ('Copyright © 2022 JAN and PRATAP (<a href="https://github.com/one-thing-gnome/one-thing">One Thing</a> on GitHub)')
+		+ '</span>',
+	    hexpand: true,
+	    halign: Gtk.Align.CENTER,
+        })
+        return label;
+	}
 }
