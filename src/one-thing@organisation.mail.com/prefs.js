@@ -1,11 +1,11 @@
+'use strict';
+
 const GLib = imports.gi.GLib;
 const Gio = imports.gi.Gio;
 const Gtk = imports.gi.Gtk;
-const GdkPixbuf = imports.gi.GdkPixbuf;
-const Gdk = imports.gi.Gdk;
 
 const ExtensionUtils = imports.misc.extensionUtils;
-Me = ExtensionUtils.getCurrentExtension();
+const Me = ExtensionUtils.getCurrentExtension();
 
 function init() {
 }
@@ -32,7 +32,6 @@ class PrefsWidget {
             margin_top: 0,
             hexpand: true,
         });
-        this.vbox.set_size_request(60, 60);
         this.vbox.append(this.addTextUrl());
         //this.vbox.append(this.addPicture());
         //this.vbox.append(this.addAuthors());

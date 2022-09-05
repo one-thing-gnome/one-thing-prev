@@ -2,6 +2,7 @@
   "description": "Put one task in your GNOME status bar.",
   "name": "One Thing",
   "settings-schema": "org.gnome.shell.extensions.one-thing",
+  "session-modes":  [ "unlock-dialog", "user" ],
   "shell-version": [
     "42"
   ],
