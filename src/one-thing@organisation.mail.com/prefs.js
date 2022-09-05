@@ -34,8 +34,8 @@ class PrefsWidget {
         });
         this.vbox.set_size_request(60, 60);
         this.vbox.append(this.addTextUrl());
-        this.vbox.append(this.addPicture());
-        this.vbox.append(this.addAuthors());
+        //this.vbox.append(this.addPicture());
+        //this.vbox.append(this.addAuthors());
         this.widget.append(this.vbox);
     }
 
