@@ -1,2 +1,10 @@
-# one-note
-to focus on a single task, this tool provides a way to show the task on gnome's top bar on the right side.
+# 1️⃣ One Thing
+**Put one task in your GNOME status bar.**
+
+Inspired by ["One Thing" for macOS](https://sindresorhus.com/one-thing).
+
+## Command Line
+
+````
+gsettings --schemadir $HOME/.local/share/gnome-shell/extensions/one-thing@organisation.mail.com/schemas set org.gnome.shell.extensions.one-thing text 'YOUR TEXT'
+````
