@@ -1,3 +1,5 @@
+'use strict';
+
 const { Clutter, GObject, Shell, St } = imports.gi;
 
 const Main = imports.ui.main;
@@ -9,7 +11,7 @@ let OneThing = GObject.registerClass(
     class OneThing extends PanelMenu.Button {
         _init() {
             super._init(0.0, 'One Thing');
-            this._label = new St.Label({ text: "", y_align:Clutter.ActorAlign.CENTER });
+            this._label = new St.Label({ text: "", y_align: Clutter.ActorAlign.CENTER });
             this.add_actor(this._label);
         }
 
@@ -19,9 +21,9 @@ let OneThing = GObject.registerClass(
 
         vfunc_event(event) {
             if (event.type() == Clutter.EventType.BUTTON_RELEASE && event.get_button() == 1) {
-                ExtensionUtils.openPrefs();
-                return Clutter.EVENT_PROPAGATE;
+                if(Main.sessionMode.currentMode !== 'unlock-dialog') ExtensionUtils.openPrefs();
             }
+            return Clutter.EVENT_PROPAGATE;
         }
 
         vfunc_key_release_event(keyEvent) {
@@ -56,7 +58,7 @@ class Extension {
 
     disable() {
         this._oneThingText.destroy();
-        this._oneThingText = null
+        this._oneThingText = null;
     }
 }
 
