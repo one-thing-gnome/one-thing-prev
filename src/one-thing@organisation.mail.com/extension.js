@@ -11,8 +11,10 @@ let OneThing = GObject.registerClass(
     class OneThing extends PanelMenu.Button {
         _init() {
             super._init(0.0, 'One Thing');
-            this._label = new St.Label({ text: "", y_align: Clutter.ActorAlign.CENTER });
-            this.add_actor(this._label);
+            this._box = new St.BoxLayout();
+            this._box.add_child(this._label = new St.Label({ text: "", y_align: Clutter.ActorAlign.CENTER }));
+            this._box.add_child(this._icon = new St.Icon({ style_class: 'system-status-icon', icon_name: 'text-editor-symbolic' }));
+            this.add_actor(this._box);
         }
 
         set label(labelText) {
@@ -45,7 +47,14 @@ class Extension {
 
     _setText() {
         let text = this._settings.get_string('text');
-        this._oneThingText.label = text;
+        if (text !== '') {
+            this._oneThingText.label = text;
+            this._oneThingText._label.show();
+            this._oneThingText._icon.hide();
+        } else {
+            this._oneThingText._label.hide();
+            this._oneThingText._icon.show();
+        };
     }
 
     enable() {
