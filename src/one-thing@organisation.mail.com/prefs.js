@@ -40,7 +40,7 @@ class PrefsWidget {
 
     addTextUrl() {
         let hbox = new Gtk.Box({ orientation: Gtk.Orientation.HORIZONTAL, margin_top: 5 });
-        this.entry = new Gtk.Entry({ hexpand: true, margin_start: 20 });
+        this.entry = new Gtk.Entry({ hexpand: true, margin_start: 20, secondary_icon_name: 'edit-clear-symbolic'});
         this.entry.set_placeholder_text("Type your 'One Thing' here …")
         this.entry.set_alignment(0.5);
 
@@ -50,6 +50,9 @@ class PrefsWidget {
         });
         this.entry.connect('activate', (entry) => {
             this._settings.set_string('text', entry.get_text());
+        });
+        this.entry.connect('icon-release', () => {
+            this.entry.set_text('')
         });
 
         hbox.append(this.entry);
